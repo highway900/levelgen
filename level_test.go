@@ -1,17 +1,18 @@
 package levelgen
 
 import (
-	//"time"
-	//"math/rand"
+	"time"
 	"testing"
 )
 
 func TestSimpleLevelGen(t *testing.T) {
 
-	var seed int64 = 1
+	var seed int64 = time.Now().Unix()
 
 	lvl := MakeLevel(500, 500, seed)
 
 	lvl.GenSimpleRandomLVL(10, seed)
 	
+	lvl.Draw("test_simple_random_lvl.svg")
+
 }

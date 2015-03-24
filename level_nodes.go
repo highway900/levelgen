@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math/rand"
 	"github.com/highway900/goNetwork"
+	"github.com/ajstarks/svgo"
 )
 
 // Effectively a wrapper on a goNetwork graph
@@ -25,7 +26,7 @@ func MakeLevel(w int, h int, seed int64) *Level {
 }
 
 func (l *Level) createRandomNode() {
-	pt := Point{
+	pt := &Point{
 		rand.Intn(l.Width),
 		rand.Intn(l.Height),
 	}
@@ -56,22 +57,68 @@ func (l *Level) GenSimpleRandomLVL(nn int, seed int64) {
 	}
 }
 
+func (l *Level) Draw(filename string) {
+
+	// TODO: Fix below
+	canvas := MakeFileCanvas(l.Width, l.Height, filename)
+
+
+	style := &SVGStyle{25, "blue", ""}
+
+	for _, edge := range l.graph.Edges {
+		line := MakeLine(
+			edge.Node_src.Data.(*LevelNode).GetPoint(),
+			edge.Node_dest.Data.(*LevelNode).GetPoint(),
+		)
+		line.SetStyle(style.MakeStyle())
+		line.Svg(canvas)
+	}
+
+	style = &SVGStyle{5, "black", "green"}
+	for _, node := range(l.graph.Nodes) {
+		shape := node.Data.(*LevelNode).GetShape()
+		shape.SetStyle(style.MakeStyle())
+		node.Data.(*LevelNode).Draw(canvas)
+	}
+
+	canvas.End()
+
+}
+
 type ILevelNode interface {
 	Action()
 }
 
 type LevelNode struct {
-	pt Point
+	pt *Point
 	value int
+	shape Shape
+}
+
+func (ln *LevelNode) Draw(canvas *svg.SVG) {
+	ln.shape.Svg(canvas)
+}
+
+func (ln *LevelNode) GetPoint() *Point {
+	return ln.pt
+}
+
+func (ln *LevelNode) GetShape() Shape {
+	return ln.shape
 }
 
 func (ln *LevelNode) Action() {
 	// Do something exciting here
+	fmt.Println("ACTION", ln.value)
 }
 
-func MakeLevelNode(pt Point, value int) *LevelNode {
+func MakeLevelNode(pt *Point, value int) *LevelNode {
 	return &LevelNode{
 		pt,
 		value,
+		MakeCirclePt(
+			pt,
+			bi(50, rand.Intn(100)),
+		),
 	}
 }

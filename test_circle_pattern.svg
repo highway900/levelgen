@@ -4,33 +4,33 @@
      xmlns="http://www.w3.org/2000/svg" 
      xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
-<pattern id="hatch" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse" >
+<pattern id="hatch" x="0" y="0" width="10" height="2500" patternUnits="userSpaceOnUse" >
 <g style="fill:none;stroke-width:1">
-<path d="M0,0 l10,10" style="stroke:red"/>
-<path d="M10,0 l-10,10" style="stroke:blue"/>
+<path d="M0,0 l10,2500" style="stroke:green"/>
+<path d="M10,0 l-10,2500" style="stroke:blue"/>
 </g>
 </pattern>
 </defs>
 <g style="stroke:black; stroke-width:2">
-<circle cx="15" cy="41" r="15" style="fill:url(#hatch)"/>
-<circle cx="408" cy="387" r="15" style="fill:url(#hatch)"/>
-<circle cx="331" cy="429" r="15" style="fill:url(#hatch)"/>
-<circle cx="356" cy="237" r="15" style="fill:url(#hatch)"/>
-<circle cx="131" cy="485" r="15" style="fill:url(#hatch)"/>
-<circle cx="26" cy="413" r="15" style="fill:url(#hatch)"/>
-<circle cx="90" cy="194" r="15" style="fill:url(#hatch)"/>
-<circle cx="63" cy="433" r="15" style="fill:url(#hatch)"/>
-<circle cx="147" cy="78" r="15" style="fill:url(#hatch)"/>
-<circle cx="324" cy="159" r="15" style="fill:url(#hatch)"/>
-<circle cx="353" cy="457" r="15" style="fill:url(#hatch)"/>
-<circle cx="221" cy="189" r="15" style="fill:url(#hatch)"/>
-<circle cx="199" cy="0" r="15" style="fill:url(#hatch)"/>
-<circle cx="205" cy="388" r="15" style="fill:url(#hatch)"/>
-<circle cx="38" cy="203" r="15" style="fill:url(#hatch)"/>
-<circle cx="355" cy="451" r="15" style="fill:url(#hatch)"/>
-<circle cx="10" cy="105" r="15" style="fill:url(#hatch)"/>
-<circle cx="156" cy="266" r="15" style="fill:url(#hatch)"/>
-<circle cx="328" cy="61" r="15" style="fill:url(#hatch)"/>
-<circle cx="202" cy="283" r="15" style="fill:url(#hatch)"/>
+<circle cx="430" cy="232" r="15" style="fill:url(#hatch)"/>
+<circle cx="416" cy="311" r="15" style="fill:url(#hatch)"/>
+<circle cx="104" cy="311" r="15" style="fill:url(#hatch)"/>
+<circle cx="413" cy="458" r="15" style="fill:url(#hatch)"/>
+<circle cx="86" cy="98" r="15" style="fill:url(#hatch)"/>
+<circle cx="132" cy="347" r="15" style="fill:url(#hatch)"/>
+<circle cx="233" cy="126" r="15" style="fill:url(#hatch)"/>
+<circle cx="433" cy="162" r="15" style="fill:url(#hatch)"/>
+<circle cx="18" cy="434" r="15" style="fill:url(#hatch)"/>
+<circle cx="86" cy="474" r="15" style="fill:url(#hatch)"/>
+<circle cx="334" cy="377" r="15" style="fill:url(#hatch)"/>
+<circle cx="471" cy="486" r="15" style="fill:url(#hatch)"/>
+<circle cx="480" cy="272" r="15" style="fill:url(#hatch)"/>
+<circle cx="72" cy="15" r="15" style="fill:url(#hatch)"/>
+<circle cx="205" cy="354" r="15" style="fill:url(#hatch)"/>
+<circle cx="299" cy="497" r="15" style="fill:url(#hatch)"/>
+<circle cx="73" cy="48" r="15" style="fill:url(#hatch)"/>
+<circle cx="461" cy="79" r="15" style="fill:url(#hatch)"/>
+<circle cx="145" cy="32" r="15" style="fill:url(#hatch)"/>
+<circle cx="247" cy="319" r="15" style="fill:url(#hatch)"/>
 </g>
 </svg>

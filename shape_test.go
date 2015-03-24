@@ -1,11 +1,10 @@
 package levelgen
 
 import (
-    "testing"
-    "fmt"
-    "os"
-    "math/rand"
-    "time"
+	"testing"
+	"fmt"
+	"math/rand"
+	"time"
 	"github.com/ajstarks/svgo"
 )
 
@@ -14,34 +13,15 @@ func ShapeTester(s Shape, canvas *svg.SVG) {
 	s.Centre()	
 }
 
-func GetWriter(filename string) *os.File {
-	f, err := os.Create(filename)
-	if err != nil {
-   		fmt.Fprintf(os.Stderr, "%v\n", err)
-   		return os.Stdout
-   	}
-   	return f
-}
-
-func TestCircle2(t *testing.T) {
+func TestCirclePatternFill(t *testing.T) {
 	fmt.Println("Testing Circle Pattern")
 
 	canvas := svg.New(GetWriter("test_circle_pattern.svg"))
 	
 	w, h := 500, 500
-	pct := 2
-	pw, ph := (w*pct)/100, (h*pct)/100
 	canvas.Start(w, h)
 	
-	// define the pattern
-	canvas.Def()
-	canvas.Pattern("hatch", 0, 0, pw, ph, "user")
-	canvas.Gstyle("fill:none;stroke-width:1")
-	canvas.Path(fmt.Sprintf("M0,0 l%d,%d", pw, ph), "stroke:red")
-	canvas.Path(fmt.Sprintf("M%d,0 l-%d,%d", pw, pw, ph), "stroke:blue")
-	canvas.Gend()
-	canvas.PatternEnd()
-	canvas.DefEnd()
+	MakePatternStyle(2, w, h, canvas)
 
 	canvas.Gstyle("stroke:black; stroke-width:2")
 	nstars := 20
