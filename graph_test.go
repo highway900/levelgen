@@ -34,8 +34,8 @@ func TestGraphDraw(t *testing.T) {
 
 	for _, edge := range graph.Edges {
 		line := MakeLine(
-			edge.Node_src.Data.(Shape).Centre(),
-			edge.Node_dest.Data.(Shape).Centre(),
+			edge.P0().Data.(Shape).Centre(),
+			edge.P1.Data.(Shape).Centre(),
 		)
 		line.Svg(canvas)
 	}

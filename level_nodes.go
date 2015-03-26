@@ -67,8 +67,8 @@ func (l *Level) Draw(filename string) {
 
 	for _, edge := range l.graph.Edges {
 		line := MakeLine(
-			edge.Node_src.Data.(*LevelNode).GetPoint(),
-			edge.Node_dest.Data.(*LevelNode).GetPoint(),
+			edge.P0().Data.(*LevelNode).GetPoint(),
+			edge.P1.Data.(*LevelNode).GetPoint(),
 		)
 		line.SetStyle(style.MakeStyle())
 		line.Svg(canvas)
